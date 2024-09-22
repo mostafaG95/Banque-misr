@@ -30,7 +30,17 @@ I used Jenkins for CI tasks, including:
 
 
 
-  
+ ## CD
 
+I used an EKS cluster for deploying the Spring Boot application. 
+
+To apply the Kubernetes configuration files, you can use the following commands:
+
+- For the deployment, use:
+  ```bash
+  kubectl apply -f <path-to-your-deployment-file>
+- For the service, use:
+  ```bash
+  kubectl apply -f <path-to-your-deployment-file>
 
 
