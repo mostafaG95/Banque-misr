@@ -13,10 +13,11 @@ This repository contains the CI/CD pipeline setup for a Spring Boot application 
 
 ## Use this File for Docker Image
 
-Use the following `Dockerfile` located in the repository to build the Docker image for the Spring Boot application:
+Use the following `dockerfile` located in the repository to build the Docker image for jenkines with docker Cli , kubectl and aws:
 
-```plaintext
-Dockerfile
+```bash
+docker build -t jenk .
+
 
   
 
