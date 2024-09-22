@@ -19,14 +19,14 @@ Use the following `dockerfile` located in the repository to build the Docker ima
 docker build -f dockerfile -t jenk:1 .
 docker run -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock jenk:1
 ```
-## CI Task
-CI Tasks
+## CI Tasks
 
 I used Jenkins for CI tasks, including:
 
-Unit Testing: Running tests to ensure code quality.
-Building the Docker Image: Creating an image for the application.
-Pushing the Image to Docker Hub: Storing the image for deployment.
+- **Unit Testing**: Running tests to ensure code quality.
+- **Building the Docker Image**: Creating an image for the application.
+- **Pushing the Image to Docker Hub**: Storing the image for deployment.
+
 
   
 
