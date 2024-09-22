@@ -13,14 +13,36 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Checkout Code') {
             steps {
                 // Clone the repository from the master branch
                 git branch: 'master', url: 'https://github.com/mostafaG95/Spring-BM.git'
+            }
+        }
 
-                // Docker build step
+        stage('Unit Tests') {
+            steps {
                 script {
-                    sh 'docker build . -f Dockerfile -t mostafag95/app --network host'
+                    // Run unit tests using Gradle
+                    sh './gradlew test'
+                }
+            }
+        }
+
+        stage('Lint Code') {
+            steps {
+                script {
+                    // Lint the code using Checkstyle for Gradle
+                    sh './gradlew check'
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Docker build step
+                    sh 'docker build . -f Dockerfile -t mostafag95/app3'
                 }
             }
         }
@@ -29,7 +51,7 @@ pipeline {
             steps {
                 script {
                     // Push the Docker image to Docker Hub
-                    sh 'docker push mostafag95/app'
+                    sh 'docker push mostafag95/app3'
                 }
             }
         }
