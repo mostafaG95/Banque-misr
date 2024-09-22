@@ -36,11 +36,11 @@ I used an EKS cluster for deploying the Spring Boot application.
 
 To apply the Kubernetes configuration files, you can use the following commands:
 
-- For the deployment, use:
+- For the deployment and load balancer svc, use:
   ```bash
-  kubectl apply -f <path-to-your-deployment-file>
-- For the service, use:
+  kubectl apply -f /k8s/deployment-prod.yaml
+- For the Ingress, use:
   ```bash
-  kubectl apply -f <path-to-your-deployment-file>
+  kubectl apply -f /k8s/Ingress.yaml
 
 
