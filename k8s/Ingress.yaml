@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  namespace: prod
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: a513542ec939742e0822f883344d631c-1025683771.eu-north-1.elb.amazonaws.com  #LoadBalancer DNS name
+    http:
+      paths:
+      - path: /live
+        pathType: Prefix
+        backend:
+          service:
+            name: app-service
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-service
+            port:
+              number: 80
