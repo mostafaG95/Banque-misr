@@ -26,6 +26,8 @@ I used Jenkins for CI tasks, including:
 - **Unit Testing**: Running tests to ensure code quality.
 - **Building the Docker Image**: Creating an image for the application.
 - **Pushing the Image to Docker Hub**: Storing the image for deployment.
+- Use the following `Jenkinsfile` located in the repository for CI pipeline
+
 
 
   
